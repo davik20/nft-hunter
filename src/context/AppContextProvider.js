@@ -7,9 +7,12 @@ function AppContextProvider({children}) {
         data: null,
         error: null
       })
+
       const [observer, setObserver] = useState(null);
       const [loadingMore, setLoadingMore] = useState(false);
       const [chain, setChain] = useState("ETHEREUM");
+
+      console.log(items)
 
   return (
     <appContext.Provider value={{items, setItems, observer,setObserver,  loadingMore, chain, chain, setChain}}>

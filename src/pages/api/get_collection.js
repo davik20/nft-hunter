@@ -16,6 +16,8 @@ export default async function handler(req, res) {
   if(cursor === "null"){
     cursor = null;
   }
+
+  console.log(address)
   
 
   let _chain;
