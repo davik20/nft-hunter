@@ -50,7 +50,7 @@ const  NFTItem = ({item, observer, chain}) => {
         <>
          {showDetails && <NFTDetails chain={chain} item={details} closeModal={closeDetails} />}
         <div ref={ref} className={styles.container} id={`nft-${item.token_id}`} onClick={handleShowDetails}>
-                <img className={styles.img} src={img_url} />
+                <img className={styles.img} src={img_url} onerror="this.onerror=null;this.src='https://i.seadn.io/gae/Dpf1IjvAGiFLtiqkpCAXXkl_x6OAhevwTPzlS3M9R8LDqI0KZHaLKVHv9Gm2iEmE_TEEad03QiLKto3bi9XmIiPnuWUrvvL44Q2Ujq4?auto=format&w=1000';" />
 
             <div className={styles.nftContent}>
                 <h2>{item.name}</h2>

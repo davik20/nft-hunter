@@ -197,7 +197,7 @@ function Header() {
         </select>
       </div>
       <div className={styles.searchBar}>
-        <input value={address} onChange={handleAddressInput} className={styles.input} placeholder='Search Address or ENS name' />
+        <input value={address} onChange={handleAddressInput} className={styles.input} placeholder='Insert address '/>
         <button onClick={handleSearchAddress} className={styles.button}> Search</button>
       </div>
 

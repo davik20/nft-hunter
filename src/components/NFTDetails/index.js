@@ -8,11 +8,15 @@ function NFTDetails({ closeModal, item, chain }) {
 
 
     let attributes = [];
+    let description;
     try {
         let _metadata = JSON.parse(metadata);
         if(_metadata){
             if(_metadata.attributes){
                 attributes = _metadata.attributes;
+            }
+            if(_metadata.description){
+                description = _metadata.description;
             }
            
         }     
@@ -27,7 +31,7 @@ function NFTDetails({ closeModal, item, chain }) {
         <Modal closeModal={closeModal}>
 
             <div className={styles.container}>
-                <img className={styles.img} src={item.img_url} />
+                <img className={styles.img} src={item.img_url} onerror="this.onerror=null;this.src='https://i.seadn.io/gae/Dpf1IjvAGiFLtiqkpCAXXkl_x6OAhevwTPzlS3M9R8LDqI0KZHaLKVHv9Gm2iEmE_TEEad03QiLKto3bi9XmIiPnuWUrvvL44Q2Ujq4?auto=format&w=1000';" />
 
                 <div className={styles.content}>
                     <div className={styles.section}>
@@ -41,6 +45,15 @@ function NFTDetails({ closeModal, item, chain }) {
                                 </p>
                                 <p className={styles.description}>
                                     {name}
+                                </p>
+                               
+                            </div>
+                            <div className={styles.sectionItem}>
+                                <p className={styles.label}>
+                                    Description
+                                </p>
+                                <p className={styles.description}>
+                                    {description ? `${description.slice(0, 25)}...`: "..."}
                                 </p>
                                
                             </div>
