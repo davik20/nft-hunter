@@ -146,17 +146,22 @@ function Header() {
           console.log(error)
           toast(error.response.data.message);
         }
+        if(error.response.status >= 500 && error.response.status <600 ){
+          toast("An error occurred with the server");
+        }
       }
       else {
         console.log(error)
         toast('An error occurred with the server');
-        setItems(prev => {
-          return {
-            ...prev,
-            state: "error"
-          }
-        })
+      
       }
+
+      setItems(prev => {
+        return {
+          ...prev,
+          state: "error"
+        }
+      })
 
     }
 

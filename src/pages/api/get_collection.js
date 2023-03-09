@@ -17,7 +17,6 @@ export default async function handler(req, res) {
     cursor = null;
   }
   
-console.log(req.query);
 
   let _chain;
 
@@ -52,18 +51,10 @@ console.log(req.query);
 
 
 res.status(200).send(response.toJSON())
-  // const address =req.address;
-  // const chain = req.chain;
-  // const response = await Moralis.EvmApi.nft.getContractNFTs({
-  // address,
-  // chain,
-  // });
-  
-  // console.log(response.toJSON());
-  //   // console.log(Moralis);
-  //   res.send(response);
+
   } catch (error) {
     console.log(error)
+    res.status(500).send();
   }
 
 }
