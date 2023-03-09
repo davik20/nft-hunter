@@ -1,0 +1,32 @@
+.container {
+    /* background-color: orange; */
+    width: calc((35rem * 3) + 6);
+    /* height: 80vh; */
+    display: grid;
+    grid-gap: 3rem;
+    grid-row-gap: 3rem;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+}
+
+
+.empty {
+    border: 1px solid var(--secondary-color);
+    height: 20rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+}
+
+.empty p {
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.empty svg {
+    font-size: 3rem;
+    margin-right: .5rem;
+    fill: #5f5f5f;
+}

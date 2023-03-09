@@ -1,0 +1,63 @@
+.container {
+    /* width: 35rem;*/
+    height: 33rem; 
+    background-color: var(--foreground-color);
+    border-top: 1px inset var(--primary-color);
+
+    border-radius: var(--border-radius);
+    cursor: pointer;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+    padding: 0 2rem;
+    animation-name: fadeIn;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
+    transition: all .2s;
+
+} 
+
+.container:hover{
+transform: scale(1.05);
+border: 1px solid var(--primary-color);
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.img { 
+    display: inline-block;
+    height: 70%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.nftContent {
+    margin-top: 1.5rem;
+    width: 100%;
+    position: relative;
+}
+
+.nftContent h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--font-color);
+}
+
+.nftContent h3 {
+    color: var(--font-color-light);
+    margin-bottom: 1rem;
+}
+
+/* .chain {
+    position: absolute;
+    right: 0;
+    background-color: rgb(229 63 235 / 16%);
+    padding: .5rem;
+    border-radius: 50%;
+} */
