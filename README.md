@@ -7,7 +7,7 @@ https://altura-project.netlify.app/
 ## env example 
 
 ```
-API_URL: moral api key
+API_URL: moralis api key
 ```
 
 
