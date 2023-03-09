@@ -17,13 +17,15 @@ const chains = [
 
 
 
-function Header({ setItems, items, setObserver, setLoadingMore}) {
+function Header({ setItems, items, setObserver, setLoadingMore, chain,setChain}) {
   const [address, setAddress] = useState('')
-  const [chain, setChain] = useState("ETHEREUM");
+
   const [cursor, setCursor] = useState(null)
   const [limit, setLimit] = useState(10)
   const [theme, setTheme] = useState('dark');
   const [fetchingMore, setFetchingMore] = useState(false)
+
+
   const handleAddressInput = (e) => {
     setAddress(e.target.value);
   }
@@ -179,9 +181,9 @@ function Header({ setItems, items, setObserver, setLoadingMore}) {
         
       
   
-        <select className={styles.select} defaultValue={chain} onChange={handleSelectChain}>
+        <select className={styles.select} onChange={handleSelectChain}>
           {chains.map(item => (
-            <option key={item}>{item}</option>
+            <option selected={item == chain ? true: false} key={item}>{item}</option>
           ))}
 
         </select>

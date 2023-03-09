@@ -12,7 +12,7 @@ import {GiShrug} from 'react-icons/gi'
 
 
 
-function NFTList({ items, observer, loadingMore }) {
+function NFTList({ items, observer, loadingMore, chain }) {
     const { state, data, error } = items;
 
 
@@ -57,7 +57,7 @@ function NFTList({ items, observer, loadingMore }) {
             <div className={styles.container}>
 
                 {state === "success" && data.map(item => (
-                    <NFTItem key={item.token_id} item={item} observer={observer} />
+                    <NFTItem chain={chain} key={item.token_id} item={item} observer={observer} />
                 ))}
 
 

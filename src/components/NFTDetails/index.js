@@ -1,7 +1,7 @@
 import React from 'react'
 import Modal from '../modal/index';
 import styles from './NFTDetails.module.css';
-function NFTDetails({ closeModal, item }) {
+function NFTDetails({ closeModal, item, chain }) {
 
     console.log(item)
     const { name, minter_address, metadata, img_url, token_address, token_id, token_uri, contract_type } = item
@@ -66,7 +66,9 @@ function NFTDetails({ closeModal, item }) {
                         </h3>
 
                         {attributes.map((attribute, index) => (
-                            <div key={index} className={styles.sectionContent}>
+                            <>
+                            {
+                              index < 6 &&  <div key={index} className={styles.sectionContent}>
                                 <div className={styles.sectionItem}>
                                     <p className={styles.label}>
                                        {attribute.trait_type}
@@ -76,6 +78,9 @@ function NFTDetails({ closeModal, item }) {
                                     </p>
                                 </div>
                             </div>
+                            }
+                            </>
+                           
                         ))}
 
 
@@ -83,7 +88,10 @@ function NFTDetails({ closeModal, item }) {
                     </div>
 
                     <div className={styles.sectionFooter}>
-                        <button>
+                        <button onClick={()=> {
+                            let link = `https://opensea.io/assets/${chain.toLowerCase()}/${token_address}/${token_id}`
+                            window.open(link, '_blank');
+                        }}>
                             PURCHASE ITEM
                         </button>
                     </div>

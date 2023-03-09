@@ -3,7 +3,7 @@ import styles from './NFTItem.module.css';
 import NFTDetails from '../NFTDetails/index';
 
 
-const  NFTItem = ({item, observer}) => {
+const  NFTItem = ({item, observer, chain}) => {
 
     const [showDetails, setShowDetails] = useState(false);
     const ref = useRef()
@@ -48,14 +48,13 @@ const  NFTItem = ({item, observer}) => {
    
     return (
         <>
-         {showDetails && <NFTDetails item={details} closeModal={closeDetails} />}
+         {showDetails && <NFTDetails chain={chain} item={details} closeModal={closeDetails} />}
         <div ref={ref} className={styles.container} id={`nft-${item.token_id}`} onClick={handleShowDetails}>
                 <img className={styles.img} src={img_url} />
 
             <div className={styles.nftContent}>
                 <h2>{item.name}</h2>
                 <h3># {item.token_id}</h3>
-                <div className={styles.chain}>BSC</div>
             </div>
         </div>
         </>
