@@ -114,6 +114,7 @@ function Header({ setItems, items, setObserver, setLoadingMore, chain,setChain})
 
   const handleSearchAddress = async (e) => {
     let address = addressRef.current.value
+    let cursor = null;
     console.log(address)
     if (!ethers.isAddress(address.trim())) {
       toast.error("Not a valid address");
