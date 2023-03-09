@@ -7,16 +7,16 @@ import Loader from '../Loader';
 import { BiFileFind } from 'react-icons/bi';
 import { HiEmojiHappy } from 'react-icons/hi';
 import {GiShrug} from 'react-icons/gi'
+import useAppContext  from '../../context/AppContext.js';
 
 
 
 
 
-function NFTList({ items, observer, loadingMore, chain }) {
+function NFTList() {
+
+    const {items, observer, loadingMore, chain} = useAppContext()
     const { state, data, error } = items;
-
-
-
 
 
 

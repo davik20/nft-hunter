@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { getNfts } from '../../handlers/getNFTs';
 import { Switch } from '@mui/material';
 import {FiTarget} from 'react-icons/fi'
+import useAppContext from '@/context/AppContext';
 
 
 const chains = [
@@ -17,13 +18,15 @@ const chains = [
 
 
 
-function Header({ setItems, items, setObserver, setLoadingMore, chain,setChain}) {
+function Header() {
   const [address, setAddress] = useState('')
 
   const [cursor, setCursor] = useState(null)
   const [limit, setLimit] = useState(10)
   const [theme, setTheme] = useState('dark');
   const [fetchingMore, setFetchingMore] = useState(false)
+
+  const {setItems, items, setObserver, setLoadingMore, chain,setChain} = useAppContext()
 
 
   const handleAddressInput = (e) => {

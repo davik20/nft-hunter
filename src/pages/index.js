@@ -6,6 +6,7 @@ import NFTList from '@/components/NFTList'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { useState, useEffect } from 'react'
+import AppContextProvider from '../context/AppContextProvider';
 
 
 export default function Home() {
@@ -20,12 +21,15 @@ export default function Home() {
 
 
   return (
-    <div className={styles.container}>
-      <ToastContainer />
-      <Header setItems={setItems} setObserver={setObserver} items={items.data} setLoadingMore={setLoadingMore} chain={chain} setChain={setChain} />
-      <div className={styles.nftListContainer}>
-        <NFTList chain={chain} observer={observer} items={items} loadingMore={loadingMore} />
+    <AppContextProvider>
+      <div className={styles.container}>
+        <ToastContainer />
+        <Header/>
+        <div className={styles.nftListContainer}>
+          <NFTList/>
+        </div>
       </div>
-    </div>
+    </AppContextProvider>
+
   )
 }
