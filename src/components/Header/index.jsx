@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState, useRef } from 'react'
 import styles from './Header.module.css';
 import { ethers } from 'ethers';
 import { toast } from 'react-toastify';
@@ -19,12 +19,11 @@ const chains = [
 
 function Header({ setItems, items, setObserver, setLoadingMore, chain,setChain}) {
   const [address, setAddress] = useState('')
-
   const [cursor, setCursor] = useState(null)
   const [limit, setLimit] = useState(10)
   const [theme, setTheme] = useState('dark');
   const [fetchingMore, setFetchingMore] = useState(false)
-
+  const addressRef = useRef();
 
   const handleAddressInput = (e) => {
     setAddress(e.target.value);
@@ -114,7 +113,8 @@ function Header({ setItems, items, setObserver, setLoadingMore, chain,setChain})
 
 
   const handleSearchAddress = async (e) => {
-
+    let address = addressRef.current.value
+    console.log(address)
     if (!ethers.isAddress(address.trim())) {
       toast.error("Not a valid address");
       return;
@@ -189,7 +189,7 @@ function Header({ setItems, items, setObserver, setLoadingMore, chain,setChain})
         </select>
       </div>
       <div className={styles.searchBar}>
-        <input value={address} onChange={handleAddressInput} className={styles.input} placeholder='Search Address or ENS name' />
+        <input ref={addressRef} value={address} onChange={handleAddressInput} className={styles.input} placeholder='Search Address or ENS name' />
         <button onClick={handleSearchAddress} className={styles.button}> Search</button>
       </div>
 
