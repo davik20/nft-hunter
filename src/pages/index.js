@@ -10,15 +10,6 @@ import AppContextProvider from '../context/AppContextProvider';
 
 
 export default function Home() {
-  const [items, setItems] = useState({
-    state: "idle",
-    data: null,
-    error: null
-  })
-  const [observer, setObserver] = useState(null);
-  const [loadingMore, setLoadingMore] = useState(false);
-  const [chain, setChain] = useState("ETHEREUM");
-
 
   return (
     <AppContextProvider>

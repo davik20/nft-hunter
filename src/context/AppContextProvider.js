@@ -15,7 +15,7 @@ function AppContextProvider({children}) {
       console.log(items)
 
   return (
-    <appContext.Provider value={{items, setItems, observer,setObserver,  loadingMore, chain, chain, setChain}}>
+    <appContext.Provider value={{items, setItems, observer, setObserver,  loadingMore, chain, chain, setChain, setLoadingMore}}>
         {children}
     </appContext.Provider>
   )

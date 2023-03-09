@@ -16,7 +16,10 @@ import useAppContext  from '../../context/AppContext.js';
 function NFTList() {
 
     const {items, observer, loadingMore, chain} = useAppContext()
+    console.log(observer, 'observer', loadingMore, chain)
     const { state, data, error } = items;
+
+
 
 
 

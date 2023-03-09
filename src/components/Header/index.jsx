@@ -35,11 +35,10 @@ function Header() {
 
   const fetchMoreNFTS = async () => {
     try {
+      console.log('fetching')
       setLoadingMore(true)
       const result = await getNfts(address, chain, limit, cursor);
       setCursor(result.data.cursor);
-
-      
       setItems(prev => {
         return {
           ...prev,
@@ -79,13 +78,14 @@ function Header() {
 
 
 
-    if (items && items.length > 0) {
+    if (items.data && items.data.length > 0) {
       let canFetchMore = true;
       let previousY = 0;
       let alreadyFetched;
       let observer = new IntersectionObserver(async (entry) => {
         const currentY = window.pageYOffset;
         entry.forEach(async(entry_)=> {
+          console.log(entry_)
           if (entry_.isIntersecting &&  currentY > previousY) {
             let id = entry_.target.id;
             id = id.slice(4);
@@ -99,15 +99,12 @@ function Header() {
             }
   
           }
-        })
-       
-       
-
+        })     
         previousY = currentY;
 
-
-
       }, options);
+
+      console.log(observer)
 
       setObserver(observer);
 

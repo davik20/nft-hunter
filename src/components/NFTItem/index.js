@@ -8,6 +8,7 @@ const  NFTItem = ({item, observer, chain}) => {
     const [showDetails, setShowDetails] = useState(false);
     const ref = useRef()
 
+
      useEffect(()=> {
         if(observer){
             observer.observe(ref.current)
