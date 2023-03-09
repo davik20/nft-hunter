@@ -24,7 +24,6 @@ function Header() {
   const [cursor, setCursor] = useState(null)
   const [limit, setLimit] = useState(10)
   const [theme, setTheme] = useState('dark');
-  const [fetchingMore, setFetchingMore] = useState(false)
 
   const {setItems, items, setObserver, setLoadingMore, chain,setChain} = useAppContext()
 
@@ -140,11 +139,12 @@ function Header() {
           state: "success"
         }
       })
+      setAddress("")
     } catch (error) {
       if (error.response) {
         if (error.response.status >= 400 && error.response.status < 500) {
           console.log(error)
-          toast(error.response.data.message);
+        toast(error.response.data.message);
         }
         if(error.response.status >= 500 && error.response.status <600 ){
           toast("An error occurred with the server");
@@ -162,6 +162,8 @@ function Header() {
           state: "error"
         }
       })
+
+      setAddress("")
 
     }
 
