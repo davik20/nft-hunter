@@ -35,7 +35,6 @@ function Header({ setItems, items, setObserver, setLoadingMore, chain,setChain})
       setLoadingMore(true)
       const result = await getNfts(address, chain, limit, cursor);
       setCursor(result.data.cursor);
-
       
       setItems(prev => {
         return {
