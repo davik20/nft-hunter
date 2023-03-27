@@ -73,8 +73,6 @@ function Header({ setItems, items, setObserver, setLoadingMore, chain,setChain})
     };
 
 
-
-
     if (items && items.length > 0) {
       let canFetchMore = true;
       let previousY = 0;
