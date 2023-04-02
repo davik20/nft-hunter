@@ -18,7 +18,7 @@ const chains = [
 
 
 function Header({ setItems, items, setObserver, setLoadingMore, chain,setChain}) {
-  const [address, setAddress] = useState('')
+  const [address, setAddress] = useState('0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D')
   const [cursor, setCursor] = useState(null)
   const [limit, setLimit] = useState(10)
   const [theme, setTheme] = useState('dark');
