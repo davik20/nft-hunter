@@ -17,7 +17,6 @@ export default function Home() {
   const [observer, setObserver] = useState(null);
   const [loadingMore, setLoadingMore] = useState(false);
   const [chain, setChain] = useState("ETHEREUM");
-
   return (
     <div className={styles.container}>
       <ToastContainer />
@@ -28,5 +27,5 @@ export default function Home() {
     </div>
   )
 
-  
+
 }
