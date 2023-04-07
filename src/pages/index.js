@@ -18,7 +18,6 @@ export default function Home() {
   const [loadingMore, setLoadingMore] = useState(false);
   const [chain, setChain] = useState("ETHEREUM");
 
-
   return (
     <div className={styles.container}>
       <ToastContainer />
