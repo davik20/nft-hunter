@@ -25,5 +25,7 @@ export default function Home() {
         <NFTList chain={chain} observer={observer} items={items} loadingMore={loadingMore} />
       </div>
     </div>
-  
+  )
+
+
 }
