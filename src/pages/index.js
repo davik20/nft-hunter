@@ -12,7 +12,7 @@ export default function Home() {
   const [items, setItems] = useState({
     state: "idle",
     data: null,
-    
+
     error: null
   })
   const [observer, setObserver] = useState(null);
@@ -22,6 +22,7 @@ export default function Home() {
 
     <div className={styles.container}>
       <ToastContainer />
+      
       <Header setItems={setItems} setObserver={setObserver} items={items.data} setLoadingMore={setLoadingMore} chain={chain} setChain={setChain} />
       <div className={styles.nftListContainer}>
         <NFTList chain={chain} observer={observer} items={items} loadingMore={loadingMore} />
